@@ -16,63 +16,67 @@
     position: relative;
   }
 
-  /* Container for floating fish */
   .fish-container {
     pointer-events: none;
     position: fixed;
     width: 100%; height: 100%;
     top: 0; left: 0;
     z-index: -1;
-    overflow: hidden;
+    overflow: visible;
   }
 
-  /* Common fish style */
   .fish {
     position: absolute;
-    width: 50px;
-    height: 30px;
-    opacity: 0.6;
+    width: 80px;   /* bigger */
+    height: 50px;  /* bigger */
+    opacity: 0.8;
     animation-timing-function: linear;
   }
 
-  /* Different fish animations */
+  /* Swimming right across screen */
   .fish1 {
     top: 20%;
-    left: -60px;
-    animation: swimRight 30s linear infinite;
+    left: -100px;
+    animation: swimRight 30s linear infinite, bob 3s ease-in-out infinite;
     animation-delay: 0s;
   }
   .fish2 {
     top: 40%;
-    left: -80px;
-    animation: swimRight 45s linear infinite;
+    left: -120px;
+    animation: swimRight 45s linear infinite, bob 4s ease-in-out infinite;
     animation-delay: 15s;
-    opacity: 0.5;
+    opacity: 0.7;
   }
   .fish3 {
     top: 65%;
-    left: -70px;
-    animation: swimRight 35s linear infinite;
+    left: -110px;
+    animation: swimRight 35s linear infinite, bob 3.5s ease-in-out infinite;
     animation-delay: 5s;
-    opacity: 0.7;
+    opacity: 0.9;
   }
   .fish4 {
     top: 85%;
-    left: -60px;
-    animation: swimRight 40s linear infinite;
+    left: -100px;
+    animation: swimRight 40s linear infinite, bob 5s ease-in-out infinite;
     animation-delay: 10s;
-    opacity: 0.4;
+    opacity: 0.5;
   }
 
   @keyframes swimRight {
     0% {
-      transform: translateX(0) translateY(0) rotate(0deg);
-    }
-    50% {
-      transform: translateX(50vw) translateY(10px) rotate(5deg);
+      transform: translateX(0) rotate(0deg);
     }
     100% {
-      transform: translateX(110vw) translateY(0) rotate(0deg);
+      transform: translateX(120vw) rotate(0deg);
+    }
+  }
+
+  @keyframes bob {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(12px);
     }
   }
 
@@ -98,7 +102,6 @@
     margin-bottom: 1rem;
   }
 
-  /* Button styles */
   .btn {
     display: inline-block;
     background-color: #2E86C1;
@@ -119,19 +122,19 @@
 
 <div class="fish-container" aria-hidden="true">
   <svg class="fish fish1" viewBox="0 0 64 39" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <path fill="#4A90E2" d="M5 20c15-5 35 5 50 0-5 5-10 10-15 15-10-5-15-10-20-15z"/>
-    <circle cx="5" cy="20" r="5" fill="#2C3E50"/>
+    <path fill="#1F77B4" d="M5 20c15-5 35 5 50 0-5 5-10 10-15 15-10-5-15-10-20-15z"/>
+    <circle cx="5" cy="20" r="5" fill="#0B3C5D"/>
   </svg>
   <svg class="fish fish2" viewBox="0 0 64 39" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <path fill="#5499C7" d="M5 20c15-5 35 5 50 0-5 5-10 10-15 15-10-5-15-10-20-15z"/>
-    <circle cx="5" cy="20" r="5" fill="#1B4F72"/>
+    <path fill="#3A94D4" d="M5 20c15-5 35 5 50 0-5 5-10 10-15 15-10-5-15-10-20-15z"/>
+    <circle cx="5" cy="20" r="5" fill="#0B3C5D"/>
   </svg>
   <svg class="fish fish3" viewBox="0 0 64 39" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <path fill="#2980B9" d="M5 20c15-5 35 5 50 0-5 5-10 10-15 15-10-5-15-10-20-15z"/>
-    <circle cx="5" cy="20" r="5" fill="#154360"/>
+    <path fill="#2A7EC2" d="M5 20c15-5 35 5 50 0-5 5-10 10-15 15-10-5-15-10-20-15z"/>
+    <circle cx="5" cy="20" r="5" fill="#0B3C5D"/>
   </svg>
   <svg class="fish fish4" viewBox="0 0 64 39" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <path fill="#1F618D" d="M5 20c15-5 35 5 50 0-5 5-10 10-15 15-10-5-15-10-20-15z"/>
+    <path fill="#145A91" d="M5 20c15-5 35 5 50 0-5 5-10 10-15 15-10-5-15-10-20-15z"/>
     <circle cx="5" cy="20" r="5" fill="#0B3C5D"/>
   </svg>
 </div>
@@ -152,7 +155,6 @@
   <h2>Beaches</h2>
   <a href="https://www.visithamptonroads.com/hampton-roads-beaches" target="_blank" rel="noopener" class="btn">Hampton Roads Beaches</a>
   <a href="https://www.vbgov.com/government/departments/parks-recreation/parks-beaches/Pages/default.aspx" target="_blank" rel="noopener" class="btn">Virginia Beach City Beaches</a>
-
 </main>
 
 </body>
