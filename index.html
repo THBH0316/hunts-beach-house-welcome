@@ -19,44 +19,47 @@
   .fish-container {
     pointer-events: none;
     position: fixed;
-    width: 100%; height: 100%;
-    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
     z-index: -1;
     overflow: visible;
+    display: block !important;
   }
 
   .fish {
     position: absolute;
-    width: 80px;   /* bigger */
-    height: 50px;  /* bigger */
+    width: 12vw;
+    height: auto;
+    max-width: 80px;
     opacity: 0.8;
     animation-timing-function: linear;
   }
 
-  /* Swimming right across screen */
   .fish1 {
     top: 20%;
-    left: -100px;
+    left: -120px;
     animation: swimRight 30s linear infinite, bob 3s ease-in-out infinite;
     animation-delay: 0s;
   }
   .fish2 {
     top: 40%;
-    left: -120px;
+    left: -140px;
     animation: swimRight 45s linear infinite, bob 4s ease-in-out infinite;
     animation-delay: 15s;
     opacity: 0.7;
   }
   .fish3 {
     top: 65%;
-    left: -110px;
+    left: -130px;
     animation: swimRight 35s linear infinite, bob 3.5s ease-in-out infinite;
     animation-delay: 5s;
     opacity: 0.9;
   }
   .fish4 {
     top: 85%;
-    left: -100px;
+    left: -120px;
     animation: swimRight 40s linear infinite, bob 5s ease-in-out infinite;
     animation-delay: 10s;
     opacity: 0.5;
