@@ -5,35 +5,85 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Hunts Beach House Welcome</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
   body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #e0f7fa;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom, #5DADE2 0%, #85C1E9 100%);
     color: #333;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
+
+  /* Fish background container */
+  .fish-container {
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: visible;
+  }
+
+  .fish {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    opacity: 0.8;
+    animation: swim linear infinite;
+  }
+
+  /* Each fish will have separate speed and vertical bobbing */
+  .fish1 { top: 20%; animation-duration: 30s; }
+  .fish2 { top: 40%; animation-duration: 45s; animation-delay: 10s; opacity: 0.7; }
+  .fish3 { top: 65%; animation-duration: 35s; animation-delay: 5s; opacity: 0.9; }
+  .fish4 { top: 85%; animation-duration: 40s; animation-delay: 15s; opacity: 0.5; }
+
+  @keyframes swim {
+    0%   { transform: translateX(-100px) translateY(0px); }
+    25%  { transform: translateX(25vw) translateY(-10px); }
+    50%  { transform: translateX(50vw) translateY(10px); }
+    75%  { transform: translateX(75vw) translateY(-10px); }
+    100% { transform: translateX(120vw) translateY(0px); }
+  }
+
+  /* Header */
   header {
-    background: #0288d1;
-    color: white;
-    padding: 1.5rem;
     text-align: center;
+    padding: 2rem 1rem 1rem;
+    color: #1B4F72;
   }
   header h1 {
-    margin: 0;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
   }
+  header p {
+    font-size: 1.1rem;
+    color: #154360;
+  }
+
   main {
-    max-width: 800px;
-    margin: auto;
+    max-width: 900px;
+    margin: 0 auto;
     padding: 1rem;
   }
+
   section {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 12px;
     margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   }
+
   h2 {
-    color: #01579b;
-    border-bottom: 2px solid #0288d1;
-    padding-bottom: 0.3rem;
+    color: #1B4F72;
+    margin-bottom: 1rem;
   }
+
   ul {
     list-style: none;
     padding: 0;
@@ -43,7 +93,7 @@
   }
   a {
     display: inline-block;
-    background: #0288d1;
+    background: #2E86C1;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 6px;
@@ -51,11 +101,19 @@
     transition: background 0.3s;
   }
   a:hover {
-    background: #01579b;
+    background: #1B4F72;
   }
+
 </style>
 </head>
 <body>
+
+<div class="fish-container">
+  <svg class="fish fish1" viewBox="0 0 64 39" xmlns="http://www.w3.org/2000/svg"><path fill="#1F77B4" d="M5 20c15-5 35 5 50 0-5 5-10 10-15 15-10-5-15-10-20-15z"/><circle cx="5" cy="20" r="5" fill="#0B3C5D"/></svg>
+  <svg class="fish fish2" viewBox="0 0 64 39" xmlns="http://www.w3.org/2000/svg"><path fill="#3A94D4" d="M5 20c15-5 35 5 50 0-5 5-10 10-15 15-10-5-15-10-20-15z"/><circle cx="5" cy="20" r="5" fill="#0B3C5D"/></svg>
+  <svg class="fish fish3" viewBox="0 0 64 39" xmlns="http://www.w3.org/2000/svg"><path fill="#2A7EC2" d="M5 20c15-5 35 5 50 0-5 5-10 10-15 15-10-5-15-10-20-15z"/><circle cx="5" cy="20" r="5" fill="#0B3C5D"/></svg>
+  <svg class="fish fish4" viewBox="0 0 64 39" xmlns="http://www.w3.org/2000/svg"><path fill="#145A91" d="M5 20c15-5 35 5 50 0-5 5-10 10-15 15-10-5-15-10-20-15z"/><circle cx="5" cy="20" r="5" fill="#0B3C5D"/></svg>
+</div>
 
 <header>
   <h1>The Hunts Beach House</h1>
@@ -66,7 +124,7 @@
   <section>
     <h2>Restaurants</h2>
     <ul>
-      <li><a href="https://www.watermans.com/" target="_blank">Waterman's Surfside Grille</a></li>
+      <li><a href="https://www.watermans.com" target="_blank">Waterman's Surfside Grille</a></li>
       <li><a href="https://www.catch31.com" target="_blank">Catch 31 Fish House</a></li>
       <li><a href="https://www.docfordsvb.com" target="_blank">Doc Ford’s Rum Bar & Grille</a></li>
     </ul>
@@ -76,7 +134,8 @@
     <h2>Activities</h2>
     <ul>
       <li><a href="https://www.vbfunguide.com" target="_blank">VB Fun Guide</a></li>
-      <li><a href="https://www.theviatr.com/virginia-beach" target="_blank">Viator Virginia Beach Tours</a></li>
+      <li><a href="https://757beachrides.com" target="_blank">757 Beach Rides</a></li>
+      <li><a href="https://www.viator.com/Virginia-Beach/d5266-ttd" target="_blank">Viator Virginia Beach Tours</a></li>
     </ul>
   </section>
 
@@ -85,10 +144,10 @@
     <ul>
       <li><a href="https://www.visithamptonroads.com/hampton-roads-beaches" target="_blank">Hampton Roads Beaches</a></li>
       <li><a href="https://www.vbgov.com/government/departments/parks-recreation/parks-beaches/Pages/default.aspx" target="_blank">Virginia Beach City Beaches</a></li>
+      <li><a href="https://www.visitsandbridge.com" target="_blank">Sandbridge Beach</a></li>
     </ul>
   </section>
 </main>
 
 </body>
 </html>
-
